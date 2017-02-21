@@ -14,7 +14,7 @@ class Sug
 		ops = JSON.parse(opraw)
 		ops.each do |op|
 			if op["board"] == board then
-				response = "Latest OP is \"#{edition}\" "
+				response = "Latest OP is \"#{op['edition']}\" "
 				if op["status"]["archived"] then
 					response = response + "[ARCHIVED] "
 				end
