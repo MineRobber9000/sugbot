@@ -7,12 +7,14 @@ class Sug
 	match /latestop (\S*)/
 	
 	def getLatestOP(board)
+		debug "Getting /sug/ OP from board #{board}"
 		opraw = RestClient.get "http://api.sug.rocks/threads.json"
 		unless opraw.code == 200
 			return "Error getting OPs from sug.rocks API"
 		end
 		ops = JSON.parse(opraw)
 		ops.each do |op|
+			debug "Trying OP on board #{op['board']}"
 			if op["board"] == board then
 				response = "Latest OP is \"#{op['edition']}\" "
 				if op["status"]["archived"] then
