@@ -9,7 +9,7 @@ bot = Cinch::Bot.new do
   configure do |c|
     c.server = $server
     c.channels = $channels
-    c.port = if ($port) then $port else 6667
+    c.port = $port || 6667
     c.nick = $botname
     c.user = $botname
     c.plugins.plugins = [Sug]
@@ -19,4 +19,3 @@ bot = Cinch::Bot.new do
 end
 
 bot.start
-end
