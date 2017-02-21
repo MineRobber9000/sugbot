@@ -32,8 +32,8 @@ class Sug
 				response = response + "(#{op['url']})"
 				return response
 			end
-			return "No OP for that board"
 		end
+		return "No OP for that board"
 	end
 
 	def execute(m,board)
