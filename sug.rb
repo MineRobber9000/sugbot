@@ -12,7 +12,7 @@ class Sug
 			return "Error getting OPs from sug.rocks API"
 		end
 		ops = JSON.parse(opraw)
-		ops.each do op
+		ops.each do |op|
 			if op["board"] == board then
 				response = "Latest OP is \"#{edition}\" "
 				if op["status"]["archived"] then
